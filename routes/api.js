@@ -15,19 +15,55 @@ apiRouter.route('/')
 apiRouter.route('/signup')
   .post(function(req, res){
 
+    var name = req.body.name;
+    var email = req.body.email;
+
+    if(name === undefined || email === undefined ){
+      res.status(400).json('{message: required parameters were left unspecified.}');
+    }
+
     pg.connect(process.env.DATABASE_URL || local_db, function(err, client) {
       if (err) throw err;
-      console.log('Connected to postgres! Getting schemas...');
+      // console.log('Connected to postgres! Getting schemas...');
 
-      client
-        .query('SELECT COUNT(*) FROM testapi;')
-        .on('row', function(row) {
-          console.log(JSON.stringify(row));
+      // client
+      //   .query('SELECT NOW() AS "theTime"', function(err, result) {
+      //     if(err) {
+      //       res.status(500).json(err);
+      //     }
+      //     console.log(result.rows[0].theTime);
+      //     //output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
+      //     client.end();
+      //     res.status(200).json(result);
+      //   });
+
+       client
+        .query('INSERT INTO testapi VALUES ($1, $2)', [name, email], function(err, result){
+          if(err) {
+            res.status(500).json(err);
+          }
+          client.end();
+          res.status(201).end();
+
         });
     });
+  });
 
-    res.status(200).send('done.');
 
+  apiRouter.route('/signups')
+    .get(function(req, res){
+      pg.connect(process.env.DATABASE_URL || local_db, function(err, client) {
+        if(err) throw err;
+        client
+          .query('SELECT * FROM testapi', function(err, result){
+            if(err) {
+              res.status(500).json(err);
+            }
+            client.end()
+
+            res.status(200).json(result.rows);
+          });
+      });
   });
 
 
