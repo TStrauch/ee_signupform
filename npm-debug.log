@@ -7,7 +7,7 @@
 6 silly lifecycle server@0.0.0~prestart: no script for prestart, continuing
 7 info lifecycle server@0.0.0~start: server@0.0.0
 8 verbose lifecycle server@0.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle server@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Timo/MyCloud/Development/Einmaleinmalig/ee_signupForm/server/node_modules/.bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home:/Users/Timo/MyCloud/Development/apache-maven-3.2.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin
+9 verbose lifecycle server@0.0.0~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/Timo/MyCloud/Development/Einmaleinmalig/ee_signupForm/server/node_modules/.bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_20.jdk/Contents/Home:/Users/Timo/MyCloud/Development/apache-maven-3.2.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/TeX/texbin:/Applications/Postgres.app/Contents/Versions/latest/bin
 10 verbose lifecycle server@0.0.0~start: CWD: /Users/Timo/MyCloud/Development/Einmaleinmalig/ee_signupForm/server
 11 silly lifecycle server@0.0.0~start: Args: [ '-c', 'node ./bin/www' ]
 12 silly lifecycle server@0.0.0~start: Returned: code: 1  signal: null
